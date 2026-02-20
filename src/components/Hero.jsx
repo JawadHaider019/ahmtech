@@ -163,7 +163,7 @@ export default function Hero() {
             >
               <motion.div transition={{ duration: 0.6 }}>
                 <Image 
-                  src="/bubble_Dark.svg" 
+                  src="/Bubble_Dark.svg" 
                   alt="Bubble logo" 
                   width={80} 
                   height={80}
