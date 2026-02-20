@@ -117,12 +117,12 @@ export default function Whyus() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-400 text-sm leading-relaxed flex-grow z-10">
                     {feature.description}
                   </p>
 
                   {/* Animated Number Background */}
-                  <div className="absolute bottom-3 right-4 text-6xl font-black text-white/5 select-none">
+                  <div className="absolute bottom-3 right-4 text-6xl font-black text-gray-200 select-none z-0">
                     {(index + 1).toString().padStart(2, '0')}
                   </div>
 
