@@ -62,7 +62,7 @@ export default function Hero() {
       ref={sectionRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative flex items-center justify-center min-h-screen bg-black overflow-hidden cursor-none md:cursor-auto"
+      className="relative flex items-center justify-center min-h-screen bg-black overflow-hidden cursor-none md:cursor-auto pb-10"
     >
       <div className="absolute inset-0 z-0">
         <InteractiveGradient />
