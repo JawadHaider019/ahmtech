@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import SectionHeader from "./SectionHeader";
 
 export default function CaseStudiesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -145,22 +146,25 @@ export default function CaseStudiesSection() {
   return (
     <section className="relative min-h-screen bg-gradient-to-r from-black via-red-600 to-black pt-16 pb-20 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        {/* Header */}
+       {/* Header with fade-in animation */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 md:mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl uppercase font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
-            Success Stories
-          </h2>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-2 md:mt-4 px-4">
-            Real results from real projects. See how we've helped founders launch faster.
-          </p>
+          <SectionHeader
+            heading="Success Stories"
+            description="Real results from real projects. See how we've helped founders launch faster."
+            gradientHeading={true}
+            smallHeadingColor="text-white" 
+            descriptionColor="text-white"
+            gradientFrom="from-white"
+            gradientVia="via-gray-100"
+            gradientTo="to-gray-300"
+          />
         </motion.div>
-
+        
         {/* Mobile Navigation Arrows (visible only on mobile) */}
         {isMobile && (
           <div className="flex justify-between items-center mb-4 px-2">
@@ -177,8 +181,6 @@ export default function CaseStudiesSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </motion.button>
-            
-         
             
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -277,8 +279,8 @@ export default function CaseStudiesSection() {
                           
                           {/* Founder info - hidden on small mobile, visible on larger screens */}
                           <div className="hidden sm:block bg-gray-50 rounded-lg md:rounded-xl p-3 md:p-4">
-                            <p className="text-xs md:text-sm text-gray-600 mb-1">{study.founder.name}</p>
-                            <p className="text-xs text-gray-400">{study.founder.title}</p>
+                            <p className="font-['Manrope'] text-xs md:text-sm text-gray-600 mb-1">{study.founder.name}</p>
+                            <p className="font-['Manrope'] text-xs text-gray-400">{study.founder.title}</p>
                           </div>
                         </div>
 
@@ -286,18 +288,18 @@ export default function CaseStudiesSection() {
                         <div className="flex-1 flex flex-col justify-center overflow-y-auto">
                           {/* Category tag */}
                           <div className="inline-block mb-2 md:mb-4">
-                            <span className="text-[10px] md:text-xs font-semibold text-red-600 bg-red-50 px-2 md:px-3 py-1 rounded-full">
+                            <span className="font-['Manrope'] text-[10px] md:text-xs font-semibold text-red-600 bg-red-50 px-2 md:px-3 py-1 rounded-full">
                               {study.category}
                             </span>
                           </div>
 
                           {/* Description */}
-                          <p className="text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-2 md:mb-4">
+                          <p className="font-['Manrope'] text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl font-medium mb-2 md:mb-4">
                             {study.description}
                           </p>
                           
                           {/* Achievement */}
-                          <p className="text-gray-700 text-xs sm:text-sm md:text-base mb-4 md:mb-6 lg:mb-8 leading-relaxed">
+                          <p className="font-['Manrope'] text-gray-700 text-xs sm:text-sm md:text-base mb-4 md:mb-6 lg:mb-8 leading-relaxed">
                             {study.achievement}
                           </p>
                           
@@ -305,16 +307,16 @@ export default function CaseStudiesSection() {
                           <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-6 mb-4 md:mb-6 lg:mb-8">
                             {study.stats.map((stat, idx) => (
                               <div key={idx}>
-                                <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{stat.value}</div>
-                                <div className="text-[10px] sm:text-xs md:text-sm text-gray-500 mt-1">{stat.label}</div>
+                                <div className="font-['Marcellus'] text-lg sm:text-xl md:text-2xl font-bold text-gray-900">{stat.value}</div>
+                                <div className="font-['Manrope'] text-[10px] sm:text-xs md:text-sm text-gray-500 mt-1">{stat.label}</div>
                               </div>
                             ))}
                           </div>
 
                           {/* Founder info - visible only on mobile */}
                           <div className="block sm:hidden bg-gray-50 rounded-lg p-2 mb-3">
-                            <p className="text-xs text-gray-600 mb-1">{study.founder.name}</p>
-                            <p className="text-[10px] text-gray-400">{study.founder.title}</p>
+                            <p className="font-['Manrope'] text-xs text-gray-600 mb-1">{study.founder.name}</p>
+                            <p className="font-['Manrope'] text-[10px] text-gray-400">{study.founder.title}</p>
                           </div>
 
                           {/* Read Story button */}
@@ -323,7 +325,7 @@ export default function CaseStudiesSection() {
                             whileTap={{ scale: 0.95 }}
                             className="flex items-center gap-2 md:gap-3 text-red-600 font-semibold text-xs sm:text-sm md:text-base w-fit group"
                           >
-                            <span>{study.cta}</span>
+                            <span className="font-['Manrope']">{study.cta}</span>
                             <div className="w-6 h-6 md:w-8 md:h-8 bg-red-600 rounded-full flex items-center justify-center group-hover:bg-red-700 transition-colors">
                               <svg className="w-3 h-3 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -345,14 +347,14 @@ export default function CaseStudiesSection() {
                         {/* Mobile closed view */}
                         {isMobile ? (
                           <div className="flex items-center justify-between w-full px-4">
-                            <span className="text-sm font-medium text-gray-700">{study.category}</span>
-                            <span className="text-lg font-bold text-gray-400">{study.number}</span>
+                            <span className="font-['Manrope'] text-sm font-medium text-gray-700">{study.category}</span>
+                            <span className="font-['Marcellus'] text-lg font-bold text-gray-400">{study.number}</span>
                           </div>
                         ) : (
                           /* Desktop closed view */
                           <div className="relative z-10 flex flex-col items-center justify-center">
                             <motion.span 
-                              className="text-3xl md:text-5xl lg:text-7xl font-black text-gray-900/20"
+                              className="font-['Marcellus'] text-3xl md:text-5xl lg:text-7xl font-black text-gray-900/20"
                               animate={{ 
                                 scale: [1, 1.1, 1],
                               }}
@@ -367,7 +369,7 @@ export default function CaseStudiesSection() {
                             
                             {/* Vertical category */}
                             <div className="mt-2 md:mt-4 h-16 md:h-24 flex items-center justify-center">
-                              <span className="text-[10px] md:text-xs font-medium text-gray-400 tracking-wider whitespace-nowrap rotate-90 origin-center uppercase">
+                              <span className="font-['Manrope'] text-[10px] md:text-xs font-medium text-gray-400 tracking-wider whitespace-nowrap rotate-90 origin-center uppercase">
                                 {study.category}
                               </span>
                             </div>
@@ -394,31 +396,27 @@ export default function CaseStudiesSection() {
         </div>
 
         {/* Desktop Navigation Dots */}
-        
-          <div className="flex justify-center gap-3 mt-8 md:mt-10">
-            {caseStudies.map((_, index) => (
-              <motion.button
-                key={index}
-                className={`relative h-2 rounded-full transition-all ${
-                  index === activeIndex ? 'w-8 md:w-10 bg-red-500' : 'w-2 bg-white/30'
-                }`}
-                onClick={() => handleSlideClick(index)}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                {index === activeIndex && (
-                  <motion.div
-                    className="absolute inset-0 rounded-full bg-red-400"
-                    animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                )}
-              </motion.button>
-            ))}
-          </div>
-        
-
-     
+        <div className="flex justify-center gap-3 mt-8 md:mt-10">
+          {caseStudies.map((_, index) => (
+            <motion.button
+              key={index}
+              className={`relative h-2 rounded-full transition-all ${
+                index === activeIndex ? 'w-8 md:w-10 bg-red-500' : 'w-2 bg-white/30'
+              }`}
+              onClick={() => handleSlideClick(index)}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {index === activeIndex && (
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-red-400"
+                  animate={{ scale: [1, 1.5, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+              )}
+            </motion.button>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -29,12 +30,13 @@ body {
 .btn-primary {
   position: relative;
   padding: 0.875rem 2rem;
+   font-family: "Manrope", sans-serif;
   background: linear-gradient(135deg, #ff0000 0%, #000000 100%);
   color: white;
   font-weight: 600;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+
   border-radius: 9999px;
   border: none;
   cursor: pointer;

@@ -92,7 +92,8 @@ export default function Hero() {
             style={{
               lineHeight: '1.1',
               textShadow: '0 4px 20px rgba(220, 38, 38, 0.15)',
-              letterSpacing: '-0.09em'
+              letterSpacing: '-0.09em',
+              fontFamily: 'var(--font-marcellus)' 
             }}
           >
             Turn Your Dream <br /> 
@@ -133,6 +134,7 @@ export default function Hero() {
             variants={textVariants}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl text-gray-100 mb-10 max-w-2xl mx-auto md:mx-0 font-light leading-relaxed tracking-wide"
+                style={{ fontFamily: 'var(--font-manrope)' }}
           >
             Build smarter, launch faster, and save more with AI-driven low-code solutions
           </motion.p>

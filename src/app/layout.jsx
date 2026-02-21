@@ -1,15 +1,16 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Marcellus, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const marcellus = Marcellus({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-marcellus",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
   subsets: ["latin"],
+  variable: "--font-manrope",
 });
 
 export const metadata = {
@@ -29,15 +30,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${marcellus.variable} ${manrope.variable}`}>
       <head>
         <link rel="icon" href="/fav.png" type="image/png" />
         <link rel="shortcut icon" href="/fav.png" type="image/png" />
         <link rel="apple-touch-icon" href="/fav.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <Navbar />
         {children}
       </body>

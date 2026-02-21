@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
 export default function Whyus() {
   // Icons as components to match your style
@@ -60,27 +61,25 @@ export default function Whyus() {
   ];
 
   return (
-    <section className="py-10  relative overflow-hidden">
-  
+    <section className="py-16 relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* Header with fade-in animation */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-        
-             <h2 className="text-5xl  uppercase font-bold bg-clip-text text-transparent bg-gradient-to-r from-black via-red-600 to-gray-900">
-            Why Ahmtech
-        
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Your Rapid Launch Partner, Built for Founders
-          </p>
+          <SectionHeader
+            heading="Why Ahmtech"
+            description="Your Rapid Launch Partner, Built for Founders"
+            gradientHeading={true}
+            gradientFrom="from-black"
+            gradientVia="via-red-600"
+            gradientTo="to-gray-900"
+          />
         </motion.div>
-
+        
         {/* Features Grid - 4 Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => {
@@ -106,23 +105,23 @@ export default function Whyus() {
                     <IconComponent />
                   </div>
 
-                  {/* Highlight/Subtitle */}
-                  <p className="text-red-600 text-xs font-semibold uppercase tracking-wider mb-2">
+                  {/* Highlight/Subtitle - Manrope font */}
+                  <p className="font-['Manrope'] text-red-600 text-xs font-semibold uppercase tracking-wider mb-2">
                     {feature.highlight}
                   </p>
 
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-black mb-3 leading-tight">
+                  {/* Title - Marcellus font */}
+                  <h3 className="font-['Marcellus'] text-lg font-bold text-black mb-3 leading-tight">
                     {feature.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-gray-400 text-sm leading-relaxed flex-grow z-10">
+                  {/* Description - Manrope font */}
+                  <p className="font-['Manrope'] text-gray-400 text-sm leading-relaxed flex-grow z-10">
                     {feature.description}
                   </p>
 
-                  {/* Animated Number Background */}
-                  <div className="absolute bottom-3 right-4 text-6xl font-black text-gray-200 select-none z-0">
+                  {/* Animated Number Background - Marcellus font */}
+                  <div className="font-['Marcellus'] absolute bottom-3 right-4 text-6xl font-black text-gray-200 select-none z-0">
                     {(index + 1).toString().padStart(2, '0')}
                   </div>
 
@@ -138,7 +137,7 @@ export default function Whyus() {
           })}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - Manrope font */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,10 +145,10 @@ export default function Whyus() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button className="btn-primary">
-              Talk to an Expert
+          <button className="font-['Manrope'] btn-primary">
+            Talk to an Expert
           </button>
-         </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -108,7 +108,7 @@ export default function Navbar() {
                               ? 'text-red-600 font-normal' 
                               : 'text-gray-600 hover:text-black'
                           }`}
-                          style={{ fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}
+                              style={{ fontFamily: 'var(--font-manrope)' }}
                         >
                           <span className="relative z-10 font-bold ">{link.label}</span>
                           {isActive && (
@@ -214,7 +214,7 @@ export default function Navbar() {
               >
                 <span 
                   className="text-gray-900 text-sm sm:text-base tracking-[0.3em] uppercase font-light"
-                  style={{ fontFamily: '"Inter", "Helvetica Neue", sans-serif' }}
+                  style={{ fontFamily: 'var(--font-manrope)' }}
                 >
                   Navigation
                 </span>
