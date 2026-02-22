@@ -4,7 +4,9 @@ import CaseStudies from "@/components/CaseStudies";
 import Partners from "@/components/Partners";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
+import FounderFocus from "@/components/FounderFocus";
 import FAQ from "@/components/FAQ";
+import CTA from '@/components/CTA'
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
        <Partners />
        <HowItWorks/>
        <Testimonials/>
+       <FounderFocus/>
        <FAQ/>
+       <CTA/>
     </>
   );
 }

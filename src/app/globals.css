@@ -40,15 +40,36 @@ body {
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease;
+ transition: all 0.3s ease;
   overflow: hidden;
   z-index: 1;
 }
 
-.btn-primary:hover {
-  transform: scale(1.05);
+.btn-secondary {
+  position: relative;
+  padding: 0.875rem 2rem;
+   font-family: "Manrope", sans-serif;
+  background: linear-gradient(135deg, #ffff 0%, #d8d8d8 100%);
+  color: red;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
 }
-
+.btn-primary:hover {
+ transform: scale(1.05);
+   background: linear-gradient(135deg, #000 0%,#ff0000  100%);
+}
+  .btn-secondary:hover {
+  transform: scale(1.05);
+   background: linear-gradient(135deg, #d8d8d8 0%,#ffff  100%);
+}
+.btn-secondary:active,
 .btn-primary:active {
   transform: scale(0.95);
 }
